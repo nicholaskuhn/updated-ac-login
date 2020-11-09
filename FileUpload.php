@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Dante
@@ -16,20 +17,20 @@ $dbname = "W01160019";
  */
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-} catch (PDOException $err){
+} catch (PDOException $err) {
     echo "I'm sorry user Dave. I can't do that. Error:" . $err->getMessage();
-    die("Error:". $err->getMessage());
+    die("Error:" . $err->getMessage());
 }
 
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (isset($_FILES['fileToUpload'])){
+if (isset($_FILES['fileToUpload'])) {
     $uploadOk = 1;
 
     $target_file = basename($_FILES["fileToUpload"]["name"]);
-    $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    if($fileType != "gci" ) {
+    if ($fileType != "gci") {
         echo "Sorry, only GCI files are allowed.";
         $uploadOk = 0;
     }
@@ -39,8 +40,7 @@ if (isset($_FILES['fileToUpload'])){
         $uploadOk = 0;
     }
 
-    if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['size'] > 0 && $uploadOk === 1)
-    {
+    if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['size'] > 0 && $uploadOk === 1) {
         $tmpName  = $_FILES['fileToUpload']['tmp_name'];
 
         $fp = fopen($tmpName, 'rb'); // read binary
@@ -56,8 +56,7 @@ if (isset($_FILES['fileToUpload'])){
             $stmtInsertFile->execute();
 
             echo "success";
-        } catch(PDOException $e)
-        {
+        } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
         }
     }
@@ -77,7 +76,6 @@ if (isset($_FILES['fileToUpload'])){
         header("Content-Disposition: attachment; filename=01-GAFE-DobutsunomoriP_MURA.gci");
         echo $content;
         exit;
-
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
     }

@@ -1,3 +1,5 @@
+
+
 /** Date array to store events  */
 var myDateArray = "";
 /** Holds the ID that the user clicked to sign in */
@@ -20,7 +22,6 @@ var myArray;
 var myEventArray;
 /** Tells if event div is open */
 var openEvent = false;
-
 /** User1 id paragraph */
 var user1Id = document.getElementById('User1');
 /** User2 id paragraph */
@@ -55,7 +56,8 @@ var displayUpload = document.getElementById("displayUpload");
 /** Loads database stuff when first started up */
 pageLoad();
 
-/** Formats date into workable format
+/** 
+ * Formats date into workable format
  * Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-dd-yyyy-hhmmss-format-in-javascript
  */
 var d = new Date,
@@ -127,17 +129,25 @@ openEventBtn.addEventListener('click', function () {
     }
 });
 
+/**
+ * Sets the selected id for the first user
+ */
 user1Id.addEventListener('click', function () {
-    console.log('tested');
     selectedId = "nick";
     handleLogin();
 });
 
+/**
+ * Sets the selected id for the second user
+ */
 user2Id.addEventListener('click', function () {
     selectedId = "libbie";
     handleLogin();
 });
 
+/**
+ * Adds an event listener to add items to the database
+ */
 addItemBtn.addEventListener('click', function () {
     runAddItem();
 });
@@ -162,10 +172,16 @@ itemNameBox.addEventListener('keyup', function (e) {
     }
 });
 
+/**
+ * Adds an event listener to check for an event on the calendarDate in the input
+ */
 calendarDate.addEventListener('keyup', function () {
     checkForEvent();
 });
 
+/**
+ * Adds an event listener to inform the user that they have submitted a file for upload
+ */
 submitBtn.addEventListener('click', function () {
     document.getElementById("submittedText").appendChild(document.createTextNode("Submitted!"));
     setTimeout(function () {
@@ -175,8 +191,8 @@ submitBtn.addEventListener('click', function () {
 
 /** 
  * Used to get events based on date 
- * @param {*} EventDateParam is the date to get events from
- * @param {*} getParam is just so the PHP knows what to call
+ * @param {String} EventDateParam is the date to get events from
+ * @param {boolean} getParam is just so the PHP knows what to call
  */
 function getFromEvent(EventDateParam, getParam) {
     $.ajax({
@@ -196,8 +212,8 @@ function getFromEvent(EventDateParam, getParam) {
 /** 
  * Gets events for the calendar widget when the page
  * loads and the calendar has to be updated
- * @param {*} EventDateParam will be null
- * @param {*} getParam is only used to run specific content in the PHP
+ * @param {String} EventDateParam will be null
+ * @param {int} getParam is only used to run specific content in the PHP
  */
 function getFromEventLoad(EventDateParam, getParam) {
     $.ajax({
@@ -215,9 +231,9 @@ function getFromEventLoad(EventDateParam, getParam) {
 
 /** 
  * Adds the event to the database
- * @param {*} eventNameParam is the event name
- * @param {*} eventDescriptionParam is the event description
- * @param {*} EventDateParam is the date
+ * @param {String} eventNameParam is the event name
+ * @param {String} eventDescriptionParam is the event description
+ * @param {String} EventDateParam is the date
  */
 function postToEvent(eventNameParam, eventDescriptionParam, EventDateParam) {
     $.ajax({
@@ -239,11 +255,11 @@ function postToEvent(eventNameParam, eventDescriptionParam, EventDateParam) {
 
 /** 
  * Adds item to the database
- * @param {*} itemNameParam is the item name
- * @param {*} donatorNameParam is the user currently signed in
- * @param {*} dateDonatedParam is the current date
- * @param {*} itemTypeParam is the radio button item type selected
- * @param {*} addingParam is just to tell the PHP what to run
+ * @param {String} itemNameParam is the item name
+ * @param {String} donatorNameParam is the user currently signed in
+ * @param {Date} dateDonatedParam is the current date
+ * @param {String} itemTypeParam is the radio button item type selected
+ * @param {boolean} addingParam is just to tell the PHP what to run
  */
 function postItemToDatabase(itemNameParam, donatorNameParam, dateDonatedParam, itemTypeParam, addingParam) {
     $.ajax({
@@ -267,7 +283,7 @@ function postItemToDatabase(itemNameParam, donatorNameParam, dateDonatedParam, i
 
 /** 
  * Gets the items from the database based on the item name
- * @param {*} itemNameParam is the user's current input into the item name box
+ * @param {String} itemNameParam is the user's current input into the item name box
  */
 function getFromDatabase(itemNameParam) {
     $.ajax({
@@ -415,8 +431,9 @@ function displayEventArrayData() {
     }
 }
 
-/** 
+/**
  * Checks the event description text for special NPC character names and adds their picture to the event
+ * @param {String} text 
  */
 function checkForImage(text) {
 
@@ -575,9 +592,9 @@ function getRadioButtonSelection() {
 
 /**
  * Register's the user's login
- * @param {*} usernameParam is the username clicked on
- * @param {*} loggedOutParam is for if the user is logging in or out
- * @param {*} loginTimeParam is for the date the user logged in/out
+ * @param {String} usernameParam is the username clicked on
+ * @param {String} loggedOutParam is for if the user is logging in or out
+ * @param {Date} loginTimeParam is for the date the user logged in/out
  */
 function registerUserLogin(usernameParam, loggedOutParam, loginTimeParam) {
     $.ajax({
@@ -660,6 +677,9 @@ function handleLogin() {
     }
 }
 
+/**
+ * Displays text notifying the user of a successful login
+ */
 function successfullyLoggedIn() {
     displayUpload.style.visibility = "hidden";
     document.getElementById("loginText").appendChild(document.createTextNode("Successfully logged in!"));
@@ -668,6 +688,9 @@ function successfullyLoggedIn() {
     }, 2000);
 }
 
+/**
+ * Displays text notifying the user of a successful logout
+ */
 function successfullyLoggedOut() {
     displayUpload.style.visibility = "visible";
     selectedId = "";
@@ -682,7 +705,7 @@ function successfullyLoggedOut() {
 /**
  * Simply makes the first letter of every word capitalized
  * Source: https://stackoverflow.com/questions/4878756/how-to-capitalize-first-letter-of-each-word-like-a-2-word-city
- * @param {*} str 
+ * @param {String} str 
  */
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
@@ -691,7 +714,7 @@ function toTitleCase(str) {
 /**
  * Checks to make sure date formatting is correct
  * Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-mm-dd
- * @param {*} dateString 
+ * @param {String} dateString 
  */
 function isValidDate(dateString) {
     var regEx = /^\d{4}-\d{2}-\d{2}$/;
