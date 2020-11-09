@@ -12,7 +12,9 @@ $password = "Nicholascs!";
 $host = "localhost"; //db.cooldomain.com
 $dbname = "W01160019";
 
-//Setup database
+/**
+ * Setup database
+ */
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 } catch (PDOException $err) {
