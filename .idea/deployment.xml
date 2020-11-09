@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Icarus">
+    <serverData>
+      <paths name="Icarus">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/CS3620/AnimalCrossingGCLoginApp" local="$PROJECT_DIR$" web="/CS3620/AnimalCrossingGCLoginApp" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+  </component>
+</project>

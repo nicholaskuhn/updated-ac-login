@@ -1,0 +1,168 @@
+body {
+    display: block;
+    background-image: url("../images/bgImage.png");
+    min-height: 100px;
+}
+
+h1 {
+    text-align: left;
+    padding: 60px 10px 10px 20px;
+    font-style: italic;
+    border-bottom: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+hr {
+    color: black;
+}
+
+#signIn {
+    text-align: center;
+    background: white;
+    width: 120%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#logo {
+    float: left;
+}
+
+#login {
+    background: #ccf2ff;
+    width: 50%;
+    height: 25%;
+    border: 3px solid;
+    border-radius: 10px;
+    margin: 5% 20% 0 27%;
+    box-shadow: 5px 5px 3px #1e90ff;
+    padding: 2% 2% 2% 2%;
+}
+
+#loginIds p{
+    text-align: center;
+    background: white;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    width: 80px;
+    margin-right: 20.5%;
+}
+
+#loginIds p:hover{
+    background-color: #EE82EE;
+}
+
+#loginHeader {
+    float: right;
+    width: 80px;
+    margin-right: 22%;
+}
+
+#main {
+    height: 1000px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 2px solid #1e90ff;
+
+    background: #cfe1f5; /* Old browsers */
+    background: -moz-linear-gradient(top, #cfe1f5 0%, #d8eaf8 30%, #e7f2fb 70%, #e7f2fb 70%, #d4e7f8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #cfe1f5 0%,#d8eaf8 30%,#e7f2fb 70%,#e7f2fb 70%,#d4e7f8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #cfe1f5 0%,#d8eaf8 30%,#e7f2fb 70%,#e7f2fb 70%,#d4e7f8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe1f5', endColorstr='#d4e7f8',GradientType=0 ); /* IE6-9 */
+}
+
+p {
+    padding: 0px 15px 1px 15px;
+    font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+    font-size: 120%;
+}
+
+button {
+    color: black;
+}
+
+#accordion {
+    padding: 50px;
+}
+
+#accordion .ui-state-focus{
+    outline: none;
+}
+
+#accordion .ui-accordion-content {
+    max-height: 370px;
+}
+
+#databaseResults {
+    background: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+th {
+    padding: 10px 10px 10px 10px;
+}
+
+td {
+    padding: 8px 10px 8px 12px;
+}
+
+#result, #eventResult, #submittedText{
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#loginText {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+#calendarEvents h3 {
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    font-style: italic;
+    border-bottom: 1px solid black;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+#calendarEvents p {
+    border-radius: 10px;
+}
+
+#calendarEvents img {
+    height: 100px;
+    width: auto;
+    float: left;
+    padding-right: 10px;
+}
+
+#calendarEvents div{
+    background: white;
+    border-radius: 10px;
+    height: auto;
+    overflow: auto;
+    margin: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.eventDate {
+    background: darkred;
+}
+
+#submitBtn {
+    margin: 10px;
+}
+
+#downloadFile {
+    margin-top: 8px;
+}
