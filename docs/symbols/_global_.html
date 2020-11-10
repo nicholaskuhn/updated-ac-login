@@ -345,6 +345,16 @@ Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
+								<b><a href="../symbols/_global_.html#itemArray">itemArray</a></b>
+								</div>
+								<div class="description">Array for holding items</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
 								<b><a href="../symbols/_global_.html#itemNameBox">itemNameBox</a></b>
 								</div>
 								<div class="description">Item name box input</div>
@@ -378,16 +388,6 @@ Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-
 								<b><a href="../symbols/_global_.html#loginStatus">loginStatus</a></b>
 								</div>
 								<div class="description">For displaying the status of logging in/out</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#myArray">myArray</a></b>
-								</div>
-								<div class="description">Array for holding items</div>
 							</td>
 						</tr>
 					
@@ -675,6 +675,24 @@ Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-
 								<div class="fixedFont"><b><a href="../symbols/_global_.html#runAddItem">runAddItem</a></b>()
 								</div>
 								<div class="description">Adds the item in item name box to the museum database</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/_global_.html#successfullyLoggedIn">successfullyLoggedIn</a></b>()
+								</div>
+								<div class="description">Displays text notifying the user of a successful login</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/_global_.html#successfullyLoggedOut">successfullyLoggedOut</a></b>()
+								</div>
+								<div class="description">Displays text notifying the user of a successful logout</div>
 							</td>
 						</tr>
 					
@@ -982,6 +1000,31 @@ Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-
 
 					<hr />
 				
+					<a name="itemArray"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>itemArray</b>
+					
+					</div>
+					<div class="description">
+						Array for holding items
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/animal.js.html">animal.js</a>.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
 					<a name="itemNameBox"> </a>
 					<div class="fixedFont">
 					
@@ -1066,31 +1109,6 @@ Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-
 					</div>
 					<div class="description">
 						For displaying the status of logging in/out
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/animal.js.html">animal.js</a>.
-						
-						
-					</div>
-					
-					
-
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name="myArray"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>myArray</b>
-					
-					</div>
-					<div class="description">
-						Array for holding items
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/animal.js.html">animal.js</a>.
@@ -1469,7 +1487,7 @@ Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<b>text</b>
+									<span class="light fixedFont">{String}</span> <b>text</b>
 									
 								</dt>
 								<dd></dd>
@@ -1564,7 +1582,7 @@ Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>itemNameParam</b>
+									<span class="light fixedFont">{String}</span> <b>itemNameParam</b>
 									
 								</dt>
 								<dd>is the user's current input into the item name box</dd>
@@ -1609,7 +1627,7 @@ Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-
 								<dd>is the date to get events from</dd>
 							
 								<dt>
-									<span class="light fixedFont">{string}</span> <b>getParam</b>
+									<span class="light fixedFont">{boolean}</span> <b>getParam</b>
 									
 								</dt>
 								<dd>is just so the PHP knows what to call</dd>
@@ -1649,13 +1667,13 @@ loads and the calendar has to be updated
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>EventDateParam</b>
+									<span class="light fixedFont">{String}</span> <b>EventDateParam</b>
 									
 								</dt>
 								<dd>will be null</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>getParam</b>
+									<span class="light fixedFont">{int}</span> <b>getParam</b>
 									
 								</dt>
 								<dd>is only used to run specific content in the PHP</dd>
@@ -1752,7 +1770,7 @@ Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>dateString</b>
+									<span class="light fixedFont">{String}</span> <b>dateString</b>
 									
 								</dt>
 								<dd></dd>
@@ -1819,34 +1837,34 @@ Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>itemNameParam</b>
+									<span class="light fixedFont">{String}</span> <b>itemNameParam</b>
 									
 								</dt>
 								<dd>is the item name</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>donatorNameParam</b>
+									<span class="light fixedFont">{String}</span> <b>donatorNameParam</b>
 									
 								</dt>
 								<dd>is the user currently signed in</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>dateDonatedParam</b>
+									<span class="light fixedFont">{Date}</span> <b>dateDonatedParam</b>
 									
 								</dt>
 								<dd>is the current date</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>itemTypeParam</b>
+									<span class="light fixedFont">{String}</span> <b>itemTypeParam</b>
 									
 								</dt>
 								<dd>is the radio button item type selected</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>addingParam</b>
+									<span class="light fixedFont">{boolean}</span> <b>addingParam</b>
 									
 								</dt>
-								<dd>is just to tell the PHP what to run</dd>
+								<dd>is just to tell the PHP which SQL to run</dd>
 							
 							</dl>
 						
@@ -1882,19 +1900,19 @@ Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>eventNameParam</b>
+									<span class="light fixedFont">{String}</span> <b>eventNameParam</b>
 									
 								</dt>
 								<dd>is the event name</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>eventDescriptionParam</b>
+									<span class="light fixedFont">{String}</span> <b>eventDescriptionParam</b>
 									
 								</dt>
 								<dd>is the event description</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>EventDateParam</b>
+									<span class="light fixedFont">{String}</span> <b>EventDateParam</b>
 									
 								</dt>
 								<dd>is the date</dd>
@@ -1933,19 +1951,19 @@ Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>usernameParam</b>
+									<span class="light fixedFont">{String}</span> <b>usernameParam</b>
 									
 								</dt>
 								<dd>is the username clicked on</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>loggedOutParam</b>
+									<span class="light fixedFont">{String}</span> <b>loggedOutParam</b>
 									
 								</dt>
 								<dd>is for if the user is logging in or out</dd>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>loginTimeParam</b>
+									<span class="light fixedFont">{Date}</span> <b>loginTimeParam</b>
 									
 								</dt>
 								<dd>is for the date the user logged in/out</dd>
@@ -2017,6 +2035,62 @@ Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-
 
 					<hr />
 				
+					<a name="successfullyLoggedIn"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>successfullyLoggedIn</b>()
+					
+					</div>
+					<div class="description">
+						Displays text notifying the user of a successful login
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/animal.js.html">animal.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="successfullyLoggedOut"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>successfullyLoggedOut</b>()
+					
+					</div>
+					<div class="description">
+						Displays text notifying the user of a successful logout
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/animal.js.html">animal.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
 					<a name="toTitleCase"> </a>
 					<div class="fixedFont">
 					
@@ -2041,7 +2115,7 @@ Source: https://stackoverflow.com/questions/4878756/how-to-capitalize-first-lett
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{*}</span> <b>str</b>
+									<span class="light fixedFont">{String}</span> <b>str</b>
 									
 								</dt>
 								<dd></dd>
@@ -2069,7 +2143,7 @@ Source: https://stackoverflow.com/questions/4878756/how-to-capitalize-first-lett
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Sun Nov 08 2020 19:56:48 GMT-0700 (MST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Nov 09 2020 18:14:49 GMT-0700 (MST)
 		</div>
 	</body>
 </html>

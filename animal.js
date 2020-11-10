@@ -1,4 +1,7 @@
-
+/**
+ * Run command to build JsDoc:
+ * jsdoc animal.js -d=./docs/
+ */
 
 /** Date array to store events  */
 var myDateArray = "";
@@ -17,7 +20,7 @@ var firstLoad = true;
 /** For telling if someone is still logged in */
 var stillLogged = true;
 /** Array for holding items */
-var myArray;
+var itemArray;
 /** Array for holding event info */
 var myEventArray;
 /** Tells if event div is open */
@@ -259,7 +262,7 @@ function postToEvent(eventNameParam, eventDescriptionParam, EventDateParam) {
  * @param {String} donatorNameParam is the user currently signed in
  * @param {Date} dateDonatedParam is the current date
  * @param {String} itemTypeParam is the radio button item type selected
- * @param {boolean} addingParam is just to tell the PHP what to run
+ * @param {boolean} addingParam is just to tell the PHP which SQL to run
  */
 function postItemToDatabase(itemNameParam, donatorNameParam, dateDonatedParam, itemTypeParam, addingParam) {
     $.ajax({
@@ -294,7 +297,7 @@ function getFromDatabase(itemNameParam) {
         },
         success: function (data) {
             if (data !== "") {
-                myArray = JSON.parse(data);
+                itemArray = JSON.parse(data);
                 displayArrayData();
             }
         }
@@ -511,7 +514,7 @@ function checkForImage(text) {
     if (text.search(/\bwendell\b/) >= 0)
         imgArray[++index] = "images/wendell.png";
     if (text.search(/\bwisp\b/) >= 0)
-        imgArray[++index] = "images/wisp.png";
+        imgArray[index] = "images/wisp.png";
 
 
     return imgArray;
@@ -540,20 +543,20 @@ function displayArrayData() {
     tr.appendChild(th4);
     tableHeader.appendChild(tr);
 
-    for (var i = 0; i < myArray.length; i++) {
+    for (var i = 0; i < itemArray.length; i++) {
         var td1 = document.createElement("td");
         var td2 = document.createElement("td");
         var td3 = document.createElement("td");
         var td4 = document.createElement("td");
         var tr2 = document.createElement("tr");
 
-        td1.appendChild(document.createTextNode(toTitleCase(myArray[i].itemName)));
+        td1.appendChild(document.createTextNode(toTitleCase(itemArray[i].itemName)));
         tr2.appendChild(td1);
-        td2.appendChild(document.createTextNode(toTitleCase(myArray[i].itemType)));
+        td2.appendChild(document.createTextNode(toTitleCase(itemArray[i].itemType)));
         tr2.appendChild(td2);
-        td3.appendChild(document.createTextNode(toTitleCase(myArray[i].donatorName)));
+        td3.appendChild(document.createTextNode(toTitleCase(itemArray[i].donatorName)));
         tr2.appendChild(td3);
-        td4.appendChild(document.createTextNode(myArray[i].dateDonated));
+        td4.appendChild(document.createTextNode(itemArray[i].dateDonated));
         tr2.appendChild(td4);
         tableHeader.appendChild(tr2);
     }
