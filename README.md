@@ -19,4 +19,4 @@ description!)
     
 * That's it! Good luck and enjoy yourself!
 
-"Database used at: http://icarus.cs.weber.edu/phpmyadmin/"
+"Database used at: Heliohost via phpMyAdmin"
