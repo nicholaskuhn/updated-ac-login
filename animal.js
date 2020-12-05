@@ -63,7 +63,7 @@ pageLoad();
  * Formats date into workable format
  * Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-dd-yyyy-hhmmss-format-in-javascript
  */
-var d = new Date,
+var d = new Date(),
     dateFormatted = [d.getFullYear(),
     d.getMonth() + 1,
     d.getDate()].join('-');
