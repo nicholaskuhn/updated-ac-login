@@ -1,0 +1,32 @@
+image: surudissanaike/himinds-env-sensor-ci:0.1
+
+stages:
+      - build
+      - static-code-analysis
+
+build:
+  stage: build
+  script:
+    - mos build
+  artifacts:
+    paths:
+    - ./build/fw.zip
+    expire_in: 2 week
+
+jshint:
+  stage: static-code-analysis
+  allow_failure: true
+  script:
+    - jshint ./animal.js
+
+flawfinder:
+  stage: static-code-analysis
+  allow_failure: true
+  script:
+    - flawfinder --falsepositive -m 5 ./src/
+
+cppcheck:
+  stage: static-code-analysis
+  allow_failure: true
+  script:
+    - cppcheck --enable=all --error-exitcode=1 ./src/
