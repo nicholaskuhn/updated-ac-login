@@ -1,0 +1,14 @@
+{
+    "name": "Jshint",
+    "version": "1.0.0",
+    "description": "",
+    "main": "animal.js",
+    "scripts": {
+        "lint": "jshint animal.js"
+    },
+    "devDependencies": {
+      "jshint": "2.12.0"
+    },
+    "author": "Nick K and A",
+    "license": "None"
+  }
