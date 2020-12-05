@@ -3,7 +3,6 @@ image: nicholaskuhn5/firstimage
 stages:
       - static-code-analysis
 
-
 jshint:
   stage: static-code-analysis
   allow_failure: true
