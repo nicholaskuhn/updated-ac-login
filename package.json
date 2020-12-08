@@ -10,8 +10,11 @@
     "jest": true
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "jshint": "jshint --exclude ./node_modules,./coverage .",
+    "jscpd": "jscpd --ignore \"**/*.min.js,**/*.map\" --format \"javascript\" --threshold 0 database.js index.js mqttConf.js"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/nicholaskuhn/ac-login-page.git"

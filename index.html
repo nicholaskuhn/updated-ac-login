@@ -76,28 +76,28 @@
         <div id="loginText"></div>
 
         <div id="accordion">
-            <h3><a href="#">Museum </a></h3>
+            <h3 id="museumTab"><a href="#">Museum </a></h3>
             <div>
                 <p>Add to or search from the museum's database</p>
                 <input type="text" id="itemNameBox">
                 <button id="addItemBtn">Add</button>
                 <form>
-                    <input type="radio" name="itemType" value="fossil" checked> Fossil
-                    <input type="radio" name="itemType" value="bug"> Bug
-                    <input type="radio" name="itemType" value="fish"> Fish
-                    <input type="radio" name="itemType" value="painting"> Painting
+                    <input type="radio" name="itemType" id="fossilRadio" value="fossil" checked> Fossil
+                    <input type="radio" name="itemType" id="bugRadio" value="bug"> Bug
+                    <input type="radio" name="itemType" id="fishRadio" value="fish"> Fish
+                    <input type="radio" name="itemType" id="paintingRadio" value="painting"> Painting
                 </form>
                 <br>
                 <div id="result"></div><br />
                 <div id="databaseResults">
-                    <table cellspacing="1" rules="rows">
+                    <table id="museumResults" cellspacing="1" rules="rows">
                         <tbody id="tableHeader"></tbody>
                     </table>
                 </div>
             </div>
 
 
-            <h3><a href="#">Calendar</a></h3>
+            <h3 id="calendarTab"><a href="#">Calendar</a></h3>
             <div>
                 <p id="addEventP">Add or check out upcoming events!</p><input type="text" id="calendarDate">
                 <button id="openEventBtn">Add Event</button>
@@ -107,7 +107,7 @@
                 <div id="calendarEvents"></div>
             </div>
 
-            <h3><a href="#">File</a></h3>
+            <h3 id="fileTab"><a href="#">File</a></h3>
             <div>
                 <iframe name="directHere" style="display:none;"></iframe>
                 <div id="displayUpload">
