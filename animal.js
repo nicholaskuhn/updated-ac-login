@@ -2,7 +2,6 @@
  * Run command to build JsDoc:
  * jsdoc animal.js -d=./docs/
  */
-
 /** Date array to store events  */
 var myDateArray = "";
 /** Holds the ID that the user clicked to sign in */
@@ -59,7 +58,7 @@ var displayUpload = document.getElementById("displayUpload");
 /** Loads database stuff when first started up */
 pageLoad();
 
-/** 
+/**
  * Formats date into workable format
  * Source: https://stackoverflow.com/questions/10632346/how-to-format-a-date-in-mm-dd-yyyy-hhmmss-format-in-javascript
  */
@@ -73,127 +72,134 @@ Number.prototype.padLeft = function (base, chr) {
     return len > 0 ? new Array(len).join(chr || '0') + this : this;
 };
 
-/** 
- * Opens and destroys event inputs 
+/**
+ * Opens and destroys event inputs
  */
-openEventBtn.addEventListener('click', function () {
-    if (!openEvent) {
+if(openEventBtn){
+  openEventBtn.addEventListener('click', function () {
+      if (!openEvent) {
 
-        var eventNameLabelVar = document.createElement("label");
-        eventNameLabelVar.id = "eventNameLabel";
-        eventNameLabelVar.appendChild(document.createTextNode("Event Name: "));
-        eventNameLabelVar.style.paddingRight = "48px";
+          var eventNameLabelVar = document.createElement("label");
+          eventNameLabelVar.id = "eventNameLabel";
+          eventNameLabelVar.appendChild(document.createTextNode("Event Name: "));
+          eventNameLabelVar.style.paddingRight = "48px";
 
-        var eventDescriptionLabelVar = document.createElement("label");
-        eventDescriptionLabelVar.id = "eventDescriptionLabel";
-        eventDescriptionLabelVar.appendChild(document.createTextNode("Event Description: "));
-        eventDescriptionLabelVar.style.paddingRight = "5px";
+          var eventDescriptionLabelVar = document.createElement("label");
+          eventDescriptionLabelVar.id = "eventDescriptionLabel";
+          eventDescriptionLabelVar.appendChild(document.createTextNode("Event Description: "));
+          eventDescriptionLabelVar.style.paddingRight = "5px";
 
-        var eventNameInputBox = document.createElement("input");
-        var eventDescriptionInputBox = document.createElement("input");
-        eventNameInputBox.type = "text";
-        eventNameInputBox.id = "eventNameBox";
+          var eventNameInputBox = document.createElement("input");
+          var eventDescriptionInputBox = document.createElement("input");
+          eventNameInputBox.type = "text";
+          eventNameInputBox.id = "eventNameBox";
 
-        eventDescriptionInputBox.type = "text";
-        eventDescriptionInputBox.id = "eventDescriptionBox";
+          eventDescriptionInputBox.type = "text";
+          eventDescriptionInputBox.id = "eventDescriptionBox";
 
-        var addEventBtnVar = document.createElement("button");
-        addEventBtnVar.id = "addEventBtn";
-        addEventBtnVar.appendChild(document.createTextNode("Add"));
+          var addEventBtnVar = document.createElement("button");
+          addEventBtnVar.id = "addEventBtn";
+          addEventBtnVar.appendChild(document.createTextNode("Add"));
 
-        eventItems.appendChild(document.createElement("br"));
-        eventItems.appendChild(eventNameLabelVar);
-        eventItems.appendChild(eventNameInputBox);
-        eventItems.appendChild(document.createElement("br"));
-        eventItems.appendChild(eventDescriptionLabelVar);
-        eventItems.appendChild(eventDescriptionInputBox);
-        eventItems.appendChild(document.createElement("br"));
-        eventItems.appendChild(addEventBtnVar);
+          eventItems.appendChild(document.createElement("br"));
+          eventItems.appendChild(eventNameLabelVar);
+          eventItems.appendChild(eventNameInputBox);
+          eventItems.appendChild(document.createElement("br"));
+          eventItems.appendChild(eventDescriptionLabelVar);
+          eventItems.appendChild(eventDescriptionInputBox);
+          eventItems.appendChild(document.createElement("br"));
+          eventItems.appendChild(addEventBtnVar);
 
-        addEventBtn = document.getElementById("addEventBtn");
-        eventNameBox = document.getElementById("eventNameBox");
-        eventDescriptionBox = document.getElementById("eventDescriptionBox");
+          addEventBtn = document.getElementById("addEventBtn");
+          eventNameBox = document.getElementById("eventNameBox");
+          eventDescriptionBox = document.getElementById("eventDescriptionBox");
 
-        addEventBtn.addEventListener('click', function () {
-            addEventItem();
-        });
+          addEventBtn.addEventListener('click', function () {
+              addEventItem();
+          });
 
-        eventDescriptionBox.addEventListener('keyup', function (e) {
-            if (13 === e.keyCode) {
-                addEventItem();
-            }
-        });
-        openEvent = true;
-    } else {
-        while (eventItems.hasChildNodes()) {
-            eventItems.removeChild(eventItems.lastChild);
-        }
-        openEvent = false;
-    }
-});
-
+          eventDescriptionBox.addEventListener('keyup', function (e) {
+              if (13 === e.keyCode) {
+                  addEventItem();
+              }
+          });
+          openEvent = true;
+      } else {
+          while (eventItems.hasChildNodes()) {
+              eventItems.removeChild(eventItems.lastChild);
+          }
+          openEvent = false;
+      }
+  });
+}
 /**
  * Sets the selected id for the first user
  */
-user1Id.addEventListener('click', function () {
-    selectedId = "nick";
-    handleLogin();
-});
-
+if(user1Id){
+  user1Id.addEventListener('click', function () {
+      selectedId = "nick";
+      handleLogin();
+  });
+}
 /**
  * Sets the selected id for the second user
  */
-user2Id.addEventListener('click', function () {
-    selectedId = "libbie";
-    handleLogin();
-});
-
+if(user2Id){
+  user2Id.addEventListener('click', function () {
+      selectedId = "libbie";
+      handleLogin();
+  });
+}
 /**
  * Adds an event listener to add items to the database
  */
-addItemBtn.addEventListener('click', function () {
-    runAddItem();
-});
-
-/** 
+if(addItemBtn){
+  addItemBtn.addEventListener('click', function () {
+      runAddItem();
+  });
+}
+/**
  * Gets stuff from database with each input. Enter calls Add, backspace and blank
  * input box will clear the area
  */
-itemNameBox.addEventListener('keyup', function (e) {
-    if (8 === e.keyCode || 46 === e.keyCode) {
-        if (itemNameBox.value.trim() === "") {
-            while (tableHeader.hasChildNodes()) {
-                tableHeader.removeChild(tableHeader.lastChild);
-            }
-        }
-    }
-    if (13 === e.keyCode) {
-        runAddItem();
-    } else {
-        var itemName = itemNameBox.value;
-        getFromDatabase(itemName.toLowerCase());
-    }
-});
-
+if(itemNameBox){
+  itemNameBox.addEventListener('keyup', function (e) {
+      if (8 === e.keyCode || 46 === e.keyCode) {
+          if (itemNameBox.value.trim() === "") {
+              while (tableHeader.hasChildNodes()) {
+                  tableHeader.removeChild(tableHeader.lastChild);
+              }
+          }
+      }
+      if (13 === e.keyCode) {
+          runAddItem();
+      } else {
+          var itemName = itemNameBox.value;
+          getFromDatabase(itemName.toLowerCase());
+      }
+  });
+}
 /**
  * Adds an event listener to check for an event on the calendarDate in the input
  */
-calendarDate.addEventListener('keyup', function () {
-    checkForEvent();
-});
-
+if(calendarDate){
+  calendarDate.addEventListener('keyup', function () {
+      checkForEvent();
+  });
+}
 /**
  * Adds an event listener to inform the user that they have submitted a file for upload
  */
-submitBtn.addEventListener('click', function () {
-    document.getElementById("submittedText").appendChild(document.createTextNode("Submitted!"));
-    setTimeout(function () {
-        document.getElementById("submittedText").removeChild(document.getElementById("submittedText").firstChild);
-    }, 2000);
-});
-
-/** 
- * Used to get events based on date 
+if(submitBtn){
+  submitBtn.addEventListener('click', function () {
+      document.getElementById("submittedText").appendChild(document.createTextNode("Submitted!"));
+      setTimeout(function () {
+          document.getElementById("submittedText").removeChild(document.getElementById("submittedText").firstChild);
+      }, 2000);
+  });
+}
+/**
+ * Used to get events based on date
  * @param {String} EventDateParam is the date to get events from
  * @param {boolean} getParam is just so the PHP knows what to call
  */
@@ -212,7 +218,7 @@ function getFromEvent(EventDateParam, getParam) {
     });
 }
 
-/** 
+/**
  * Gets events for the calendar widget when the page
  * loads and the calendar has to be updated
  * @param {String} EventDateParam will be null
@@ -232,7 +238,7 @@ function getFromEventLoad(EventDateParam, getParam) {
     });
 }
 
-/** 
+/**
  * Adds the event to the database
  * @param {String} eventNameParam is the event name
  * @param {String} eventDescriptionParam is the event description
@@ -256,7 +262,7 @@ function postToEvent(eventNameParam, eventDescriptionParam, EventDateParam) {
     });
 }
 
-/** 
+/**
  * Adds item to the database
  * @param {String} itemNameParam is the item name
  * @param {String} donatorNameParam is the user currently signed in
@@ -284,7 +290,7 @@ function postItemToDatabase(itemNameParam, donatorNameParam, dateDonatedParam, i
     });
 }
 
-/** 
+/**
  * Gets the items from the database based on the item name
  * @param {String} itemNameParam is the user's current input into the item name box
  */
@@ -312,7 +318,7 @@ function pageLoad() {
     getFromEventLoad(null, 2);
 }
 
-/** 
+/**
  * Checks for events based on the date in the input box
  */
 function checkForEvent() {
@@ -436,7 +442,7 @@ function displayEventArrayData() {
 
 /**
  * Checks the event description text for special NPC character names and adds their picture to the event
- * @param {String} text 
+ * @param {String} text
  */
 function checkForImage(text) {
 
@@ -684,17 +690,20 @@ function handleLogin() {
  * Displays text notifying the user of a successful login
  */
 function successfullyLoggedIn() {
+  if(displayUpload){
     displayUpload.style.visibility = "hidden";
     document.getElementById("loginText").appendChild(document.createTextNode("Successfully logged in!"));
     setTimeout(function () {
         document.getElementById("loginText").removeChild(document.getElementById("loginText").firstChild);
     }, 2000);
+  }
 }
 
 /**
  * Displays text notifying the user of a successful logout
  */
 function successfullyLoggedOut() {
+  if(displayUpload){
     displayUpload.style.visibility = "visible";
     selectedId = "";
     loggedIn = "";
@@ -703,12 +712,13 @@ function successfullyLoggedOut() {
     setTimeout(function () {
         document.getElementById("loginText").removeChild(document.getElementById("loginText").firstChild);
     }, 2000);
+  }
 }
 
 /**
  * Simply makes the first letter of every word capitalized
  * Source: https://stackoverflow.com/questions/4878756/how-to-capitalize-first-letter-of-each-word-like-a-2-word-city
- * @param {String} str 
+ * @param {String} str
  */
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
@@ -717,7 +727,7 @@ function toTitleCase(str) {
 /**
  * Checks to make sure date formatting is correct
  * Source: https://stackoverflow.com/questions/35856104/convert-mm-dd-yyyy-to-yyyy-mm-dd
- * @param {String} dateString 
+ * @param {String} dateString
  */
 function isValidDate(dateString) {
     var regEx = /^\d{4}-\d{2}-\d{2}$/;
@@ -726,3 +736,13 @@ function isValidDate(dateString) {
     if (!d.getTime() && d.getTime() !== 0) return false; // Invalid date
     return d.toISOString().slice(0, 10) === dateString;
 }
+
+
+module.exports = { getFromEvent: getFromEvent, getFromEventLoad: getFromEventLoad,
+postToEvent: postToEvent, postItemToDatabase: postItemToDatabase, getFromDatabase: getFromDatabase,
+pageLoad: pageLoad, checkForEvent: checkForEvent, addEventItem: addEventItem,
+reloadCalendar: reloadCalendar, displayEventArrayData: displayEventArrayData,
+checkForImage: checkForImage, displayArrayData: displayArrayData, runAddItem: runAddItem,
+getRadioButtonSelection: getRadioButtonSelection, registerUserLogin: registerUserLogin,
+handleLogin: handleLogin, successfullyLoggedIn: successfullyLoggedIn,
+successfullyLoggedOut: successfullyLoggedOut, toTitleCase: toTitleCase, isValidDate: isValidDate};
