@@ -383,7 +383,6 @@ function reloadCalendar() {
     $("#calendarDate").datepicker({
         beforeShowDay: function (date) {
             date = $.datepicker.formatDate('yy-mm-dd', date);
-            console.log(date);
             for (var i = 0; i < myDateArray.length; i++) {
                 if (date === myDateArray[i].eventDate) {
                     found = true;
