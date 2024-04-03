@@ -146,7 +146,7 @@ if(user1Id){
  */
 if(user2Id){
   user2Id.addEventListener('click', function () {
-      selectedId = "libbie";
+      selectedId = "aubryn";
       handleLogin();
   });
 }
@@ -617,7 +617,7 @@ function registerUserLogin(usernameParam, loggedOutParam, loginTimeParam) {
         success: function (data) {
             //debugger;
             if (data !== "") {
-                if (data === "nick" || data === "libbie") {
+                if (data === "nick" || data === "aubryn") {
                     startupLoginCheck = data;
                 } else {
                     loginStatus = data;
@@ -625,8 +625,8 @@ function registerUserLogin(usernameParam, loggedOutParam, loginTimeParam) {
                 if (startupLoginCheck === "nick" && firstLoad) {
                     loggedIn = "nick";
                     user1Id.style.backgroundColor = "#59dc51";
-                } else if (startupLoginCheck === "libbie" && firstLoad) {
-                    loggedIn = "libbie";
+                } else if (startupLoginCheck === "aubryn" && firstLoad) {
+                    loggedIn = "aubryn";
                     user2Id.style.backgroundColor = "#59dc51";
                 } else if (loginStatus === "loggedUserIn") {
                     stillLogged = true;
@@ -666,8 +666,8 @@ function handleLogin() {
                 successfullyLoggedIn();
                 loggedIn = "nick";
             }
-        } else if (selectedId === "libbie") {
-            if (loggedIn === "libbie") {
+        } else if (selectedId === "aubryn") {
+            if (loggedIn === "aubryn") {
                 user2Id.style.backgroundColor = "white";
                 registerUserLogin(selectedId, "1", dateFormatted);
                 successfullyLoggedOut();
@@ -675,7 +675,7 @@ function handleLogin() {
                 registerUserLogin(selectedId, "0", dateFormatted);
                 user2Id.style.backgroundColor = "#59dc51";
                 successfullyLoggedIn();
-                loggedIn = "libbie";
+                loggedIn = "aubryn";
             }
         }
     } else {

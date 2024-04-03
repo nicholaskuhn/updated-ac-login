@@ -95,7 +95,7 @@ test('Checks handleLogin', () => {
 
 test('Checks registerUserLogin', () => {
   expect(animalModule.registerUserLogin("nick","loggedUserIn","2020-10-10")).toBeUndefined();
-  expect(animalModule.registerUserLogin("libbie","loggedUserIn","2020-10-10")).toBeUndefined();
+  expect(animalModule.registerUserLogin("aubryn","loggedUserIn","2020-10-10")).toBeUndefined();
 });
 
 test('Checks getRadioButtonSelection', () => {
