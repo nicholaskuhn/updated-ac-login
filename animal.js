@@ -736,13 +736,3 @@ function isValidDate(dateString) {
     if (!d.getTime() && d.getTime() !== 0) return false; // Invalid date
     return d.toISOString().slice(0, 10) === dateString;
 }
-
-
-module.exports = { getFromEvent: getFromEvent, getFromEventLoad: getFromEventLoad,
-postToEvent: postToEvent, postItemToDatabase: postItemToDatabase, getFromDatabase: getFromDatabase,
-pageLoad: pageLoad, checkForEvent: checkForEvent, addEventItem: addEventItem,
-reloadCalendar: reloadCalendar, displayEventArrayData: displayEventArrayData,
-checkForImage: checkForImage, displayArrayData: displayArrayData, runAddItem: runAddItem,
-getRadioButtonSelection: getRadioButtonSelection, registerUserLogin: registerUserLogin,
-handleLogin: handleLogin, successfullyLoggedIn: successfullyLoggedIn,
-successfullyLoggedOut: successfullyLoggedOut, toTitleCase: toTitleCase, isValidDate: isValidDate};
