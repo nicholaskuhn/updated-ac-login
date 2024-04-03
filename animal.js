@@ -296,7 +296,7 @@ function postItemToDatabase(itemNameParam, donatorNameParam, dateDonatedParam, i
  */
 function getFromDatabase(itemNameParam) {
     $.ajax({
-        type: 'post',
+        type: 'get',
         url: 'MuseumDB.php',
         data: {
             itemName: itemNameParam

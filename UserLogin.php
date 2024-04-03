@@ -26,10 +26,10 @@ function setupDbUserLogin()
 {
     global $dbh;
     // Usage for MySql
-    $username = "nearizpe_NickA"; // "W01160019";
+    $username = "xsolbadguy_NickK"; // "W01160019";
     $password = "DrFry2020"; // "Nicholascs!";
     $host = "localhost"; //db.cooldomain.com
-    $dbname = "nearizpe_AnimalCrossingDB"; // "W01160019";
+    $dbname = "xsolbadguy_AnimalCrossingDB"; // "W01160019";
 
     try {
         $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
