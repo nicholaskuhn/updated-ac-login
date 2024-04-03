@@ -205,7 +205,7 @@ if(submitBtn){
  */
 function getFromEvent(EventDateParam, getParam) {
     $.ajax({
-        type: 'get',
+        type: 'post',
         url: 'EventDates.php',
         data: {
             eventDate: EventDateParam,
@@ -226,7 +226,7 @@ function getFromEvent(EventDateParam, getParam) {
  */
 function getFromEventLoad(EventDateParam, getParam) {
     $.ajax({
-        type: 'get',
+        type: 'post',
         url: 'EventDates.php',
         data: {
             eventDate: EventDateParam,
@@ -296,7 +296,7 @@ function postItemToDatabase(itemNameParam, donatorNameParam, dateDonatedParam, i
  */
 function getFromDatabase(itemNameParam) {
     $.ajax({
-        type: 'get',
+        type: 'post',
         url: 'MuseumDB.php',
         data: {
             itemName: itemNameParam
