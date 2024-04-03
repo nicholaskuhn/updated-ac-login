@@ -205,7 +205,7 @@ if(submitBtn){
  */
 function getFromEvent(EventDateParam, getParam) {
     $.ajax({
-        type: 'post',
+        type: 'get',
         url: 'EventDates.php',
         data: {
             eventDate: EventDateParam,
@@ -226,7 +226,7 @@ function getFromEvent(EventDateParam, getParam) {
  */
 function getFromEventLoad(EventDateParam, getParam) {
     $.ajax({
-        type: 'post',
+        type: 'get',
         url: 'EventDates.php',
         data: {
             eventDate: EventDateParam,
